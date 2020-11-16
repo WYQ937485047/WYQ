@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+			
+			.header-menu {
+				position: fixed;
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				background-color: rgba(0, 0, 0, .06);
+				z-index: 2000;
+			}
+			
+			.header-menu-logo>img {
+				width: 150px;
+				float: left;
+				margin-top: 10px;
+			}
+			
+			.header-menu-logo {
+				width: 230px;
+				height: 60px;
+				line-height: 60px;
+				float: left;
+				margin-left: 150px;
+				position: relative;
+			}
+			
+			.header-menu-li {
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.header-menu-li>li {
+				float: left;
+				margin-left: 20px;
+			}
+			
+			.header-menu-li>li:last-child {
+				margin-right: 20px;
+				border: 1px solid white;
+				height: 40px;
+				margin-top: 10px;
+				line-height: 40px;
+				padding: 0 10px;
+			}
+			
+			.header-menu-li>li>a {
+				color: white;
+				font-size: 15px;
+				padding-bottom: 5px;
+				text-decoration: none;
+			}
+			
+			.header-menu-li>li>a:hover {
+				border-bottom: 2px solid orange;
+			}
+			
+			.header-menu-li>li:last-child>a:hover {
+				border-bottom: 0px solid orange;
+			}
+			
+			.header-menu-login-register {
+				float: right;
+				margin-right: 150px;
+				color: white;
+				cursor: pointer;
+			}
+			
+			.saoma {
+				position: relative;
+			}
+			
+			.saoma-one {
+				width: 120px;
+				height: 140px;
+				position: absolute;
+				top: 70px;
+				left: -20px;
+				background: white;
+				text-align: center;
+				border-radius: 5px;
+				display: none;
+			}
+			
+			.saoma-two {
+				width: 70px;
+				height: 70px;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				background: white;
+				/*	transform: translate(-35%,-35%);*/
+				/*transform: translate(-%,-%);移动,第一水平方向,竖直方向*/
+			}
+			
+			.saoma-one>p {
+				float: left;
+			}
+			
+			.saoma-two>p {
+				font-size: 12px;
+			}
+			
+			.saoma-three {
+				width: 0;
+				height: 0;
+				/* 将四个边的框都隐藏显示 */
+				border: 10px solid transparent;
+				/* 指定要显示的边的颜色 */
+				border-bottom-color: white;
+				position: absolute;
+				top: -20px;
+				left: 50px;
+			}
+			
+			.life {
+				width: 100%;
+				height: 440px;
+				position: relative;
+			}
+			
+			.life>div {
+				width: 100%;
+				height: 450px;
+				background-color: rgba(0, 0, 0, 0.2);
+				display: inline-block;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+				
+			}
+			
+			.life>div>div {
+				width: 428px;
+				height: 133px;
+				position: absolute;
+				top: 200px;
+				left: 171px;
+				z-index: 1;
+				color: white;
+			}
+			
+			.life>div>div>p {
+				margin-top: 10px;
+			}
+			
+			.life>img {
+				width: 100%;
+				height: 450px;
+			}
+			
+			.beathome {
+				width: 1152px;
+				height: 146px;
+				margin: 0px auto;
+				position: relative;
+			}
+			
+			.beathome>.beathome_left {
+				width: 252px;
+				height: 46px;
+				margin: 0px auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			.beathome>.beathome_left>div {
+				float: left;
+			}
+			
+			.beathome>.beathome_left>.left {
+				width: 36px;
+				height: 36px;
+				float: left;
+			}
+			
+			.beathome>.beathome_left>.right {
+				width: 36px;
+				height: 36px;
+				float: left;
+			}
+			
+			.beathome>.beathome_right {
+				width: 81px;
+				height: 146px;
+				float: right;
+				line-height: 146px;
+			}
+			
+			.beathome>.beathome_right>a {
+				color: black;
+				text-decoration: none;
+			}
+			
+			.bthome_img {
+				width: 1152px;
+				height: 506px;
+				margin: 0px auto;
+			}
+			
+			.bthome_img>div {
+				width: 370px;
+				height: 506px;
+				/*background: pink;*/
+				float: left;
+				margin-right: 20px;
+				position: relative;
+			}
+			
+			.bthome_img>div>a {
+				text-decoration: none;
+			}
+			
+			.bthome_img>.bthome_img_right>div {
+				width: 370px;
+				height: 248px;
+				/*	background: orange;*/
+				margin-bottom: 10px;
+				position: relative;
+			}
+			
+			.bthome_img>.bthome_img_right>div>a {
+				text-decoration: none;
+			}
+			
+			.bthome_img>.bthome_img_right>div>a>div {
+				width: 370px;
+				height: 30px;
+				background-color: rgba(0, 0, 0, 0.8);
+				color: white;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				z-index: 1;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			.bthome_img>div>a>.img-bottom {
+				width: 370px;
+				height: 30px;
+				background-color: rgba(0, 0, 0, 0.8);
+				color: white;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				z-index: 1;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			.hot {
+				width: 1152px;
+				height: 340px;
+				margin: 0px auto;
+			}
+			
+			.hot>ul>li {
+				width: 210px;
+				height: 334px;
+				list-style: none;
+				margin-right: 20px;
+				position: relative;
+				float: left;
+			}
+			
+			.hot>ul>li>a {
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.hot>ul>li>a>p {
+				display: -webkit-box;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+			
+			.hot>ul>li>a>img {
+				margin-bottom: 20px;
+			}
+			
+			.hot>ul>li>a>.price {
+				width: 210px;
+				height: 40px;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+			
+			.hot>ul>li>a>.price>span {
+				color: red;
+				font-size: 30px;
+			}
+			
+			.hot>ul>li>a>.price>span:after {
+				content: "元";
+				font-size: 16px;
+				font-weight: lighter;
+			}
+			
+			.social {
+				width: 1152px;
+				height: 872px;
+				margin: 0px auto;
+			}
+			
+			.social>div {
+				width: 556px;
+				/*height: 338px;*/
+				margin-right: 40px;
+				float: left;
+				margin-bottom: 48px;
+				text-align: center;
+			}
+			
+			.social>div:nth-of-type(2n) {
+				margin-right: 0px;
+			}
+			
+			.social>div>a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.social>div>a>h3 {
+				font-size: 20px;
+			}
+			
+			.social>div>a>p {
+				font-size: 15px;
+			}
+			
+			.social>div>a>div {
+				width: 100%;
+				height: 288px;
+				overflow: hidden;
+				margin-bottom: 20px;
+				position: relative;
+			}
+			
+			.social>div>a>div>div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 1;
+				display: none;
+			}
+			
+			.social>div>a>div>div>img {
+				width: 136px;
+				height: 136px;
+				margin: 30px auto 20px;
+				transition: all 10s,
+			}
+			
+			.social>div>a>div>div:hover>img {
+				transform: scale(1.2);
+			}
+			
+			.social>div>a>div:hover>div {
+				display: block;
+			}
+			
+			.social>div>a>div>img {
+				transition: all 3s;
+			}
+			
+			.social>div>a>div:hover>img {
+				transform: scale(1.1);
+			}
+			
+			.social>div>.gif>div:hover>img {
+				transform: scale(1);
+			}
+			
+			.rental-experience {
+				width: 100%;
+				height: 574px;
+			}
+			
+			.rental-experience>ul>li {
+				width: 20%;
+				height: 287px;
+				position: relative;
+				overflow: hidden;
+				float: left;
+			}
+			
+			.rental-experience>ul>li>img {
+				width: 100%;
+			}
+			
+			.rental-experience>ul>li:hover>img {
+				transform: scale(1.1);
+				transition: all 3s;
+			}
+			
+			.rental-experience>ul>li>div {
+				width: 100%;
+				height: 287px;
+				background-color: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+				color: white;
+				text-align: center;
+				display: none;
+			}
+			
+			.rental-experience>ul>li:hover>div {
+				display: block;
+			}
+			
+			.rental-experience>ul>li>div>h3 {
+				font-size: 20px;
+				font-weight: bold;
+				margin: 50px 0px 20px;
+			}
+			
+			.rental-experience>ul>li>div>p {
+				font-size: 14px;
+			}
+			
+			.rental-experience>ul>li>div>div {
+				margin: 0px auto;
+				width: 262px;
+				height: 198.6px;
+			}
+			
+			.hui {
+				margin-top: 54px;
+				width: 100%;
+				height: 350px;
+				background-color: #212121;
+			}
+			
+			.hui>div {
+				width: 1152px;
+				height: 350px;
+				margin: 0px auto;
+				position: relative;
+			}
+			
+			.hui>div>div {
+				width: 682px;
+				height: 182.44px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+			}
+			
+			.hui>div>div>.one {
+				width: 136px;
+				height: 182.44px;
+				float: left;
+				margin-right: 40px;
+				text-align: center;
+			}
+			
+			.hui>div>div>.one>p {
+				margin: 10px 0px;
+			}
+			
+			.hui>div>div>.two {
+				width: 136px;
+				height: 182.44px;
+				float: left;
+				margin-right: 40px;
+				text-align: center;
+			}
+			
+			.hui>div>div>.two>p {
+				margin: 10px 0px;
+			}
+			
+			.hui>div>div>.line {
+				width: 1px;
+				height: 136px;
+				background: white;
+				float: left;
+				margin-right: 40px;
+			}
+			
+			.hui>div>div>a>.thr {
+				width: 261px;
+				height: 59px;
+				background: white;
+				float: left;
+				margin-top: 38px;
+				text-align: center;
+				line-height: 59px;
+			}
+			
+			.hui>div>div>a>.thr {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.foot {
+				margin-top: 54px;
+				width: 100%;
+				height: 350.44px;
+				border-top: 1px solid #ddd;
+			}
+			
+			.foot>div>div {
+				margin: 0px auto;
+			}
+			
+			.foot>.foot_one {
+				width: 100%;
+				height: 80.89px;
+				border-bottom: 1px solid #ddd;
+				/*	margin:0px auto ;*/
+			}
+			
+			.foot>.foot_one>div {
+				width: 1152px;
+				height: 80.89px;
+			}
+			
+			.foot>.foot_one>div>ul>li {
+				height: 80.89px;
+				margin-right: 30px;
+				line-height: 80.89px;
+				float: left;
+				list-style: none;
+			}
+			
+			.foot>.foot_one>div>ul>li>a {
+				text-decoration: none;
+				color: black;
+				font-size: 17px;
+			}
+			
+			.foot>.foot_one>div>ul>li:hover>a {
+				text-decoration: underline;
+			}
+			
+			.foot>.foot_two {
+				width: 100%;
+				height: 80px;
+				margin-top: 10px;
+				border-bottom: 1px solid rgba(0, 0, 0, 0);
+				/*	margin:0px auto ;*/
+			}
+			
+			.foot>.foot_two>div {
+				width: 1152px;
+				height: 80.89px;
+			}
+			
+			.foot>.foot_two>div>ul>li {
+				height: 80.89px;
+				margin-right: 30px;
+				line-height: 80.89px;
+				float: left;
+				list-style: none;
+			}
+			
+			.foot>.foot_two>div>ul>li>a {
+				text-decoration: none;
+				color: black;
+				font-size: 17px;
+			}
+			
+			.foot>.foot_two>div>ul>li:hover>a {
+				text-decoration: underline;
+			}
+			
+			.foot>.foot_thr {
+				width: 100%;
+				height: 80px;
+				border-bottom: 1px solid #ddd;
+				/*	margin:0px auto ;*/
+			}
+			
+			.foot>.foot_thr>div {
+				width: 1152px;
+				height: 80.89px;
+			}
+			
+			.foot>.foot_thr>div>ul>li {
+				height: 80.89px;
+				margin-right: 30px;
+				float: left;
+				list-style: none;
+			}
+			
+			.foot>.foot_thr>div>ul>li>a {
+				text-decoration: none;
+				color: rgba(0, 0, 0, .4);
+				font-size: 15px;
+			}
+			
+			.foot>.foot_thr>div>ul>li:hover>a {
+				text-decoration: underline;
+			}
+			
+			.foot>.foot_four {
+				width: 100%;
+				height: 108.67px;
+			}
+			
+			.foot>.foot_four>div {
+				width: 1152px;
+				height: 100%;
+			}
+			
+			.foot>.foot_four>div>div {
+				width: 1152px;
+				height: 58.67px;
+				margin: 24px 0px;
+			}
+			
+			.foot>.foot_four>div>div>.four_left {
+				width: 160px;
+				height: 46.81px;
+				margin-right: 30px;
+				float: left;
+			}
+			
+			.foot>.foot_four>div>div>.four_right {
+				width: 610px;
+				height: 58.67px;
+				float: left;
+			}
+			
+			.foot>.foot_four>div>div>.four_right>p {
+				font-size: 13px;
+				color: rgba(0, 0, 0, .4);
+			}
+			
+			.foot>.foot_four>div>div>.four_right>p>a {
+				text-decoration: none;
+				color: rgba(0, 0, 0, .4);
+			}
+			
+			.foot>.foot_four>div>div>.four_right>p>a:before {
+				content: url(../img/e889d38d-829d-4cae-b58b-6ceee615b8ea.png);
+				margin-right: 10px;
+			}
+		</style>
+		<script src="../js/jquery-3.5.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// 监听滚动条事件，控制头部菜单
+				$(document).scroll(function() {
+					// 实时获得滚动条高度
+					var scroH = $(document).scrollTop();
+
+					if(scroH >= 60) {
+						// 滚动时的菜单样式
+
+						// 将头部菜单改为固定定位、背景白色、层级5000
+						$(".header-menu").css({
+							"position": "fixed",
+							"background": "#FFF",
+							"z-index": "5000"
+						})
+						$(".current-city>div").css({
+							"background": "#FFF",
+							"color": "#999999",
+							"border": "1px solid #999999"
+						});
+						$(".header-menu-logo>img").attr("src", "../img/logo2.png");
+						$(".header-menu-li>li>a").css("color", "#000000");
+						$(".header-menu-li>li").last().css("border", "1px solid #000");
+						$(".header-menu-login-register").css("color", "#000000");
+					} else {
+						// 复原
+						$(".header-menu").css({
+							"background-color": "rgba(0, 0, 0, .06)"
+						})
+						$(".current-city>div").css({
+							"background": "#999",
+							"color": "#fff"
+						});
+						$(".header-menu-logo>img").attr("src", "../img/logo.png");
+						$(".header-menu-li>li>a").css("color", "white");
+						$(".header-menu-li>li").last().css("border", "1px solid #fff");
+						$(".header-menu-login-register").css("color", "white");
+					}
+				})
+
+				// 菜单app下载二维码
+				$(".saoma").hover(function() {
+					$(".saoma-one").show();
+				}, function() {
+					$(".saoma-one").hide();
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="header-menu">
+			<div class="header-menu-logo">
+				<img src="../img/logo.png" />
+
+			</div>
+
+			<ul class="header-menu-li">
+				<li>
+					<a href="../index.html">首页</a>
+				</li>
+				<li>
+					<a href="">租房</a>
+				</li>
+				<li>
+					<a href="../html/自如寓.html">自如寓</a>
+				</li>
+				<li>
+					<a href="../html/自如驿.html">自如驿</a>
+				</li>
+				<li>
+					<a href="">服务</a>
+				</li>
+				<li>
+					<a href="../html/生活.html">生活</a>
+				</li>
+				<li>
+					<a href="">企悦会</a>
+				</li>
+				<li>
+					<a href="">加入我们</a>
+				</li>
+				<li class="saoma">
+					<a href="">APP下载</a>
+					<div class="saoma-one">
+						<div class="saoma-two">
+							<img src="../img/head.png" width="100px" height="100px" />
+
+						</div>
+						<p style="margin-top: 91px; margin-left: 18px; font-size: 15px;">扫码下载APP</p>
+						<div class="saoma-three"></div>
+					</div>
+
+				</li>
+
+				<li>
+					<a href="">成为房东</a>
+				</li>
+			</ul>
+			<div class="header-menu-login-register">
+				登录&nbsp;&nbsp;|&nbsp;&nbsp;注册
+			</div>
+		</div>
+		<div class="life">
+			<img src="../img/zry/顶部图片.jpg" alt="" />
+			<div>
+				<div>
+					<h1 style="font-size: 70px;">自如生活</h1>
+					<p style="font-size: 17px;">自如生活，都市青年生活社区<br />自如全屋智能，智能家居美学生活馆</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="beathome">
+			<div class="beathome_left">
+				<div class="left">
+					<img src="../img/title_bg1.png" alt="" width="100%" /></div>
+				<div>
+					<p style="font-size: 30px;font-weight: bold;">全屋智能美家</p>
+				</div>
+				<div class="right">
+					<img src="../img/title_bg2.png" alt="" width="100%" /></div>
+			</div>
+			<div class="beathome_right">
+				<a href="">查看更多&nbsp;></a>
+			</div>
+
+		</div>
+
+		<div class="bthome_img">
+
+			<div>
+				<a href="">
+					<img src="https://webimg.ziroom.com/9d1936de-5177-41dc-a871-4c5b435e4cbb.png" alt="" style="width: 100%;height: 100%;" />
+					<div class="img-bottom">出行宅家，护你周全</div>
+				</a>
+
+			</div>
+
+			<div>
+				<a href="">
+					<img src="https://webimg.ziroom.com/cbf2433d-38d7-42bf-b6c6-bc4de7a20bf9.png" alt="" style="width: 100%;height: 100%;" />
+					<div class="img-bottom">智慧全屋-高颜值遇上好聪明</div>
+				</a>
+
+			</div>
+
+			<div style="margin-right: 0px;" class="bthome_img_right">
+
+				<div>
+					<a href="">
+						<img src="https://webimg.ziroom.com/e0b8191e-db60-46ef-b114-33d3678252c7.png" alt="" width="100%" />
+						<div class="right_bottom">智慧浴室-这个浴室很“听话”</div>
+					</a>
+
+				</div>
+				<div style="margin-bottom: 0px;">
+					<a href="">
+						<img src="https://webimg.ziroom.com/4b86a59e-ea99-430a-9c24-895d1a59e459.png" alt="" width="100%" />
+						<div class="right_bottom">智慧客厅-轻松宅家随心遥控一切</div>
+					</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="beathome">
+			<div class="beathome_left" style="width: 192px;">
+				<div class="left"><img src="../img/title_bg1.png" alt="" width="100%" /></div>
+				<div>
+					<p style="font-size: 30px;font-weight: bold;">爆款推荐</p>
+				</div>
+				<div class="right"><img src="../img/title_bg2.png" alt="" width="100%" /></div>
+			</div>
+			<div class="beathome_right">
+				<a href="">查看更多&nbsp;></a>
+			</div>
+
+		</div>
+
+		<!--爆款推荐-->
+		<div class="hot">
+			<ul id="goods">
+				<li>
+					<a href="#">
+						<img src="https://img.yzcdn.cn/upload_files/2020/02/20/FnVjREuf1saLF-0INgZFkdmh5MMy.jpg" alt="" width="210px" />
+						<p class="title">自如智能 健康防护空气净化器KJ310G-Z01</p>
+						<div class="price"><span>1999</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="https://img.yzcdn.cn/upload_files/2018/11/20/FgrskiDsdYQ44WCEtZiy2bgEUqYj.jpg" alt="" width="210px" />
+						<p class="title">【一伸手即出泡沫，只当你的“手”护神！】雷仕利自动感应泡沫洗手机0.25 秒黑科技自动感应洗手机，99% 消菌保护全家双手</p>
+						<div class="price"><span>49.9</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="https://img.yzcdn.cn/upload_files/2019/11/13/FphYJIeBd_tDOAyMuJUc1RtzJNEO.jpg" alt="" width="210px" />
+						<p class="title">【牙刷比马桶水还脏】潮弄 CNON 一款会消毒的牙刷架，告别凌乱的空间，让生活充满仪式感！深紫外线牙刷消毒器</p>
+						<div class="price"><span>99</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="https://img.yzcdn.cn/upload_files/2020/02/01/FmQ5Dya9OY4pim_v6lsIKBljQbFr.png" alt="" width="210px" />
+						<p class="title">六竖智能消毒筷筒 拒绝病从口入 捍卫家人健康</p>
+						<div class="price"><span>109</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="https://img.yzcdn.cn/upload_files/2019/07/17/Fiehbj1vB95DubOrvGgDNUWvy6nN.jpg" alt="" width="210px" />
+						<p class="title">Lecoo 感应节水宝S1 智能水龙头</p>
+						<div class="price"><span>169</span></div>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<div class="beathome">
+			<div class="beathome_left" style="width: 192px;">
+				<div class="left"><img src="../img/title_bg1.png" alt="" width="100%" /></div>
+				<div>
+					<p style="font-size: 30px;font-weight: bold;">生活社区</p>
+				</div>
+				<div class="right"><img src="../img/title_bg2.png" alt="" width="100%" /></div>
+			</div>
+
+		</div>
+		<div class="social">
+			<div>
+				<a href="">
+					<div>
+						<div>
+							<img src="https://webimg.ziroom.com/4623c874-534e-42a5-bf3c-5b17438ba7e1.png" alt="" width="136px" />
+							<h3 style="color: white;">扫码查看详情</h3>
+							<p style="color: white;">抢先锁定活动名额</p>
+						</div>
+						<img src="https://webimg.ziroom.com/78439299-72fa-445e-87c0-dc001709e907.jpg" alt="" width="100%" />
+
+					</div>
+
+					<h3>“敷”个清凉生活，闯进炎炎夏日！</h3>
+					<p>1000份芙清限定凉茶面膜免费领！祛痘清凉更优雅~</p>
+					<p>07/02 16:00 ~ 07/13 18:00</p>
+				</a>
+			</div>
+			<div>
+				<a href="">
+					<div>
+						<div>
+							<img src="https://webimg.ziroom.com/4623c874-534e-42a5-bf3c-5b17438ba7e1.png" alt="" width="136px" />
+							<h3 style="color: white;">扫码查看详情</h3>
+							<p style="color: white;">抢先锁定活动名额</p>
+						</div>
+						<img src="https://webimg.ziroom.com/1457ab80-bf58-4937-a66d-7f63dbbd2e14.jpg" alt="" width="100%" />
+
+					</div>
+
+					<h3>自如x银乐迪 | 夏日毕业季，免费欢唱燃给你看！</h3>
+					<p>凭毕业证即可免费欢唱3小时，自如客更有专享K歌福利</p>
+					<p>06/12 00:00 ~ 08/30 00:00</p>
+				</a>
+			</div>
+			<div>
+				<a href="" class="gif">
+					<div>
+						<div>
+							<img src="https://webimg.ziroom.com/4623c874-534e-42a5-bf3c-5b17438ba7e1.png" alt="" width="136px" />
+							<h3 style="color: white;">扫码查看详情</h3>
+							<p style="color: white;">抢先锁定活动名额</p>
+						</div>
+						<img src="https://webimg.ziroom.com/76ac3d96-94c8-4c15-a9c5-af2e4b9c774d.gif" alt="" width="100%" />
+
+					</div>
+
+					<h3>有奖投票 | 你有哪些间歇性热爱生活的方式？</h3>
+					<p>这时而丧，时而积极的人生啊...</p>
+					<p>06/27 23:48 ~ 07/27 00:00</p>
+				</a>
+			</div>
+			<div>
+				<a href="">
+					<div>
+						<div>
+							<img src="https://webimg.ziroom.com/4623c874-534e-42a5-bf3c-5b17438ba7e1.png" alt="" width="136px" />
+							<h3 style="color: white;">扫码查看详情</h3>
+							<p style="color: white;">抢先锁定活动名额</p>
+						</div>
+						<img src="https://webimg.ziroom.com/04b856be-daa2-4306-ad10-453522165993.jpg" alt="" width="100%" />
+
+					</div>
+					<h3>海燕制噪千人嗨趴</h3>
+
+				</a>
+			</div>
+		</div>
+		<div class="beathome">
+			<div class="beathome_left" style="width: 253px;">
+				<div class="left"><img src="../img/title_bg1.png" alt="" width="100%" /></div>
+				<div>
+					<p style="font-size: 30px;font-weight: bold;">精彩活动图集</p>
+				</div>
+				<div class="right"><img src="../img/title_bg2.png" alt="" width="100%" /></div>
+			</div>
+
+		</div>
+
+		<div class="rental-experience">
+			<ul>
+				<li>
+					<img src="https://webimg.ziroom.com/963bf55e-baf0-417f-84c3-60742d11ac44.jpg" />
+					<div>
+						<h3>2019自如国际胡同节</h3>
+						<div>
+							<p>2019自如国际胡同节</p>
+							<p>1000+中外自如客在这座京城二环的百年院落里，一起玩转Bazinga4王争霸赛/CP匹配交友 / 京城最IN中英脱口秀 / Silent Disco… 拯救平线心电图，逛吃逛喝笑翻天。</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/461edb17-1685-450a-8b29-4c7e6ae96755.jpg" />
+					<div>
+						<h3>2019自如跨年趴</h3>
+						<div>
+							<p>2019自如跨年趴</p>
+							<p>喝最烈的酒，蹦最野的迪，700位自如客齐跨年，嗨皮共享金猪年，将欢乐和感动从2018带到2019。</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/24fd2a34-32f8-49f6-98fc-8b8884fa7b9b.jpg" />
+					<div>
+						<h3>自如驿跨年音乐会</h3>
+						<div>
+							<p>自如驿跨年音乐会</p>
+							<p>在三里屯团结自如驿穿越至90’s找寻旧时欢乐，超酷乐队嗨翻全场，惊喜抽奖、趣味游戏、童年零食和饮料……百位自如客携手倒计时喜提2019。</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/aa677920-bc8b-4f35-9395-e9dbee237977.jpg" />
+					<div>
+						<h3>地下72小时遇见派对</h3>
+						<div>
+							<p>地下72小时遇见派对</p>
+							<p>都市单身青年齐聚愚园路，这是一场聚集恋爱、游戏、音乐、艺术的社交派对。多个潮酷艺术装置，“CP”互动体验区，纵享沉浸式浪漫嗨心体验，开启跨越时空遇见。</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/4cbf9e47-fcbd-4f37-9792-490215b1dc2b.jpg" />
+					<div>
+						<h3>直击万圣节鬼混现场</h3>
+						<div>
+							<p>直击万圣节鬼混现场</p>
+							<p>五座城市，八场线下活动，五百位自如客参与，惊魂鬼屋、尖叫PK、捉鬼有礼、百鬼夜行……这个万圣节，自如与你一起“妆”神弄鬼，魔人狂欢一整夜！</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/53ce51e9-4968-461b-a208-eaf7e0536bac.jpg" />
+					<div>
+						<h3>自如西塘汉服节</h3>
+						<div>
+							<p>自如西塘汉服节</p>
+							<p>36位自如客的汉服体验之旅，36小时的沉浸式游戏互动。行烟雨长廊，驻足安境桥上，南湖有佳人，回忆梢上……</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/2ef2ca0c-4487-4104-a73a-21a0e7d9c471.jpg" />
+					<div>
+						<h3>海洋球欢乐到家服务</h3>
+						<div>
+							<p>海洋球欢乐到家服务</p>
+							<p>自如联合@西瓜PLAY，向全城自如客提供「PLAY玩乐球填充到家服务」！为自如客填充满屋子欢乐，在家也能重回烂漫童真，感受玩乐的奇妙。</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/4d19cb1e-2be3-4754-81ec-c734d3fe5d67.jpg" />
+					<div>
+						<h3>自如生活节 | 看海人</h3>
+						<div>
+							<p>自如生活节 | 看海人</p>
+							<p>自如联合什刹海共同打造了一间只存在14天的小隐隐于什刹海边的“海景房”，中秋夜和自如客们倚舟赏月，对酒当歌，一起吃蟹，祝大家节日快乐！</p>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<img src="https://webimg.ziroom.com/28daeae7-fe25-448f-a0ea-faadebb37709.jpg" />
+					<div>
+						<h3>自如生活节 | 喜剧周末</h3>
+						<div>
+							<p>自如生活节 | 喜剧周末</p>
+							<p>17场脱口秀 / 3个展览 /2场SILENT DISCO / 1个独立书店，在北京夏天的尾巴里，史炎、ROCK等脱口秀大咖在安静的东二环内的自如Z-SPACE造了一个梦。</p>
+						</div>
+
+					</div>
+					<li>
+						<img src="https://webimg.ziroom.com/7173e8e9-4350-4410-aed8-a0ce43214da6.jpg" />
+						<div>
+							<h3>自如生活节 | 不房结婚</h3>
+							<div>
+								<p>自如生活节 | 不房结婚</p>
+								<p>七夕，自如生活节系列活动之“不房结婚”在北京二环内的四合院Z-SPACE举行。9对自如客新人齐聚三百年银杏树下，共同迈入了婚姻的殿堂。</p>
+							</div>
+
+						</div>
+					</li>
+			</ul>
+		</div>
+		<div class="hui">
+			<div>
+				<div>
+					<div class="one">
+						<img src="https://webimg.ziroom.com/4e1b8293-6966-4ff7-bf6a-401155ee823f.png" alt="" width="100%" />
+						<p>自如全屋智能</p>
+					</div>
+					<div class="two">
+						<img src="https://webimg.ziroom.com/373fe7d1-c132-4e7b-a907-3e5d05802f66.png" alt="" width="100%" />
+						<p>自如APP下载</p>
+					</div>
+					<div class="line"></div>
+					<a href="">
+						<div class="thr">招商合作</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="foot_one">
+				<div>
+					<ul>
+						<li>
+							<a href="">加入我们</a>
+						</li>
+						<li>
+							<a href="">自如采购</a>
+						</li>
+						<li>
+							<a href="">隐私政策</a>
+						</li>
+						<li>
+							<a href="">网站地图</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot_two">
+				<div>
+					<ul>
+						<li>
+							<a href="">友情链接</a>
+						</li>
+						<li>
+							<a href="">热门区域</a>
+						</li>
+						<li>
+							<a href="">地铁周边</a>
+						</li>
+						<li>
+							<a href="">热门城市</a>
+						</li>
+						<li>
+							<a href="">最新房源</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot_thr">
+				<div>
+					<ul>
+						<li>
+							<a href="">友情链接</a>
+						</li>
+						<li>
+							<a href="">热门区域</a>
+						</li>
+						<li>
+							<a href="">地铁周边</a>
+						</li>
+						<li>
+							<a href="">热门城市</a>
+						</li>
+						<li>
+							<a href="">最新房源</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot_four">
+				<div>
+					<div>
+						<div class="four_left">
+							<img src="../img/zry/ziroom_logo_slogan_color_2.png" alt="" width="100%" />
+						</div>
+						<div class="four_right">
+							<p>天津创享信息科技有限公司 Copyright©2020 ziroom.com 版权所有</p>
+							<p>
+								<a href="#">京公安网备 11010502035891号</a>&nbsp;&nbsp;&nbsp;津ICP备19002079号-2</p>
+							<p>违法和不良信息举报电话：4001001111-9 违法和不良信息举报邮箱：jubao@ziroom.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
